@@ -1,3 +1,0 @@
-This is a changed file (I just changed this line) example.
-
-I just added another line.
