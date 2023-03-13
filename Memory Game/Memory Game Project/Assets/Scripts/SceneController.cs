@@ -13,10 +13,12 @@ public class SceneController : MonoBehaviour {
 	[SerializeField] MemoryCard originalCard;
 	[SerializeField] Sprite[] images;
 	[SerializeField] TMP_Text scoreLabel;
+	[SerializeField] TMP_Text turnsLabel;
 	
 	private MemoryCard firstRevealed;
 	private MemoryCard secondRevealed;
 	private int score = 0;
+	private int turns = 0;
 
 	public bool canReveal {
 		get {return secondRevealed == null;}
@@ -81,6 +83,8 @@ public class SceneController : MonoBehaviour {
 		if (firstRevealed.Id == secondRevealed.Id) {
 			score++;
 			scoreLabel.text = $"Score: {score}";
+			turns++;
+			turnsLabel.text = $"Turns: {turns}";
 		}
 
 		// otherwise turn them back over after .5s pause
@@ -89,7 +93,9 @@ public class SceneController : MonoBehaviour {
 
 			firstRevealed.Unreveal();
 			secondRevealed.Unreveal();
-		}
+            turns++;
+            turnsLabel.text = $"Turns: {turns}";
+        }
 		
 		firstRevealed = null;
 		secondRevealed = null;
