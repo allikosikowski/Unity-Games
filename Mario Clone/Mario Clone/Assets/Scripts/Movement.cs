@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour
     private Rigidbody2D body;
     private Animator anim;
 
+    public bool Jump;
+
     void Start()
     {
         box = GetComponent<BoxCollider2D>();
@@ -37,9 +39,13 @@ public class Movement : MonoBehaviour
         Collider2D hit = Physics2D.OverlapArea(corner1, corner2);
 
         bool grounded = false;
+        Jump = true;
+        anim.SetBool("Jump", true);
         if (hit != null)
         {
             grounded = true;
+            Jump = false;
+            anim.SetBool("Jump", false);
         }
 
         body.gravityScale = (grounded && Mathf.Approximately(deltaX, 0)) ? 0 : 1;
