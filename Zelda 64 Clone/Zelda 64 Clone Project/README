@@ -2,5 +2,5 @@ You can move the charecter with "WASD" and space to jump.
 There are animations for standing jumping runing and falling.
 The small charecters follow you and have an animation when your charecter looks at them.
 
-Allison Kosikowski set up the environment and animations / controlls for the main player.
-Levi Garrison implemented the small charecters (following and special animation).
+Allison Kosikowski set up the environment, gems, "lazer" obstacles, door, and animations / controlls for the main player.
+Levi Garrison implemented the small charecters (following and special animation) and the inventory.
